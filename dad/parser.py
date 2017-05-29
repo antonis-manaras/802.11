@@ -1,3 +1,4 @@
+from __future__ import print_function
 import pyshark
 from colors import Colors
 
@@ -9,18 +10,25 @@ class Scraper:
     def scraper(self):
         pkt_list = []
         pcap_file = ("data/%s" % self.pcap)
-        print "\n"
-        print Colors.OKGREEN + "===============================" + Colors.ENDC
-        print Colors.OKGREEN + "= Scraping : " + str(pcap_file) + Colors.ENDC
-        print Colors.OKGREEN + "===============================" + Colors.ENDC
+        print ("\n")
+        # print Colors.OKGREEN + "===============================" + Colors.ENDC
+        # print Colors.OKGREEN + "= Scraping : " + str(pcap_file) + Colors.ENDC
+        # print Colors.OKGREEN + "===============================" + Colors.ENDC
+        print (Colors.OKGREEN + '''
+        ===============================
+        = Scraping : ''' + str(pcap_file) +
+        '''
+        ===============================
+        ''' + Colors.ENDC )
 
         wfilter = "wlan.fc.type_subtype eq 12 && wlan.da != ff:ff:ff:ff:ff:ff"
         cap = pyshark.FileCapture(pcap_file, display_filter=wfilter)
 
         for pkt in cap:
             try:
-                print Colors.FAIL + "Deauth attack on: " + str(pkt.frame_info.time) + " from : " + str(pkt.wlan.ta) + " and lasts " + str(pkt.wlan.duration) + " microseconds." + Colors.ENDC
+                print (Colors.FAIL + "Deauth attack on: " + str(pkt.frame_info.time) + " from : " + str(pkt.wlan.ta) + " and lasts " + str(pkt.wlan.duration) + " microseconds." + Colors.ENDC)
             except:
                 pass
-        print "================================================================="
-        print "\n\n"
+        print ("\n\n")
+        print ("=================================================================")
+        print ("\n\n")
