@@ -28,7 +28,7 @@ class Menu(Scraper):
         ╚═════╝ ╚═╝  ╚═╝╚═════╝    v1.0.0-alpha" + Colors.ENDC
         ''' + Colors.ENDC)
         print ("\n\n")
-        print (Colors.WARNING + "Deauthentication Attac Detection - DAD tool" + Colors.ENDC)
+        print (Colors.WARNING + "Deauthentication Attacks Detection - DAD tool" + Colors.ENDC)
         # print "v1.0.0-alpha"
         print ("\n\n")
         print ("Menu")
