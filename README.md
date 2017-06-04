@@ -2,7 +2,7 @@
 802.11 Pentesting repo
 
 
-## DAD - Deauthentication Attack Detection v.1.0.0-alpha
+## DAD - Deauthentication Attack Detection v.1.0.1-alpha
 
 A tool to detect deauthentication attacks
 
