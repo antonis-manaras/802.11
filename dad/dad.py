@@ -25,7 +25,7 @@ class Menu(Scraper):
         ██║  ██║███████║██║  ██║
         ██║  ██║██╔══██║██║  ██║
         ██████╔╝██║  ██║██████╔╝
-        ╚═════╝ ╚═╝  ╚═╝╚═════╝    v1.0.0-alpha" + Colors.ENDC
+        ╚═════╝ ╚═╝  ╚═╝╚═════╝    v1.0.0-alpha
         ''' + Colors.ENDC)
         print ("\n\n")
         print (Colors.WARNING + "Deauthentication Attacks Detection - DAD tool" + Colors.ENDC)
