@@ -27,10 +27,9 @@ class Scraper:
 
         for pkt in cap:
             try:
-                # print (Colors.FAIL + "Deauth attack on: " + str(pkt.frame_info.time) + " from : " + str(pkt.wlan.ta) + " and lasts " + str(pkt.wlan.duration) + " microseconds." + Colors.ENDC)
                 pkt_list.append(pkt)
             except:
-                pass
+                pass # Here should exist proper error handling
         if pkt_list:
             for deauth_pkt in pkt_list:
                 print (Colors.FAIL + "Deauth attack on: " + str(deauth_pkt.frame_info.time) + " from : " + str(deauth_pkt.wlan.ta) + " and lasts " + str(deauth_pkt.wlan.duration) + " microseconds." + Colors.ENDC)

@@ -4,36 +4,36 @@ from parser import Scraper
 from colors import Colors
 import sys
 
+def display_banner():
+    print ("\n\n")
+    print (Colors.OKBLUE + '''
+    ██████╗  █████╗ ██████╗
+    ██╔══██╗██╔══██╗██╔══██╗
+    ██║  ██║███████║██║  ██║
+    ██║  ██║██╔══██║██║  ██║
+    ██████╔╝██║  ██║██████╔╝
+    ╚═════╝ ╚═╝  ╚═╝╚═════╝    v1.0.1-alpha
+    ''' + Colors.ENDC)
+    print ("\n\n")
+    print (Colors.WARNING + "Deauthentication Attacks Detection - DAD tool" + Colors.ENDC)
+    print ("\n\n")
+
 class Menu(Scraper):
     def __init__(self):
         self.choices = {
+            "2": self.instructions,
             "1": self.scraper,
             "0": self.quit
         }
 
     def display_menu(self):
         print ("\n\n")
-        # print Colors.OKBLUE+"██████╗  █████╗ ██████╗" + Colors.ENDC
-        # print Colors.OKBLUE+"██╔══██╗██╔══██╗██╔══██╗" + Colors.ENDC
-        # print Colors.OKBLUE+"██║  ██║███████║██║  ██║" + Colors.ENDC
-        # print Colors.OKBLUE+"██║  ██║██╔══██║██║  ██║" + Colors.ENDC
-        # print Colors.OKBLUE+"██████╔╝██║  ██║██████╔╝" + Colors.ENDC
-        # print Colors.OKBLUE+"╚═════╝ ╚═╝  ╚═╝╚═════╝" + "   v1.0.0-alpha" + Colors.ENDC
-        print (Colors.OKBLUE + '''
-        ██████╗  █████╗ ██████╗
-        ██╔══██╗██╔══██╗██╔══██╗
-        ██║  ██║███████║██║  ██║
-        ██║  ██║██╔══██║██║  ██║
-        ██████╔╝██║  ██║██████╔╝
-        ╚═════╝ ╚═╝  ╚═╝╚═════╝    v1.0.0-alpha
-        ''' + Colors.ENDC)
-        print ("\n\n")
-        print (Colors.WARNING + "Deauthentication Attacks Detection - DAD tool" + Colors.ENDC)
-        # print "v1.0.0-alpha"
-        print ("\n\n")
         print ("Menu")
+        print ("============")
+        print ("2. Instructions")
         print ("1. Audit .pcap file for Deauthentication Attacks")
         print ("0. Quit")
+        print ("\n\n")
 
     def run(self):
         while True:
@@ -53,9 +53,21 @@ class Menu(Scraper):
 
     def quit(self):
         print ("\n\n")
-        print ("Thank you for using DAD tool.")
-        print ("Gracefully quiting...")
+        print (Colors.FAIL + "Thank you for using DAD tool." + Colors.ENDC)
+        print (Colors.FAIL + "Gracefully quiting..." + Colors.ENDC)
         sys.exit(0)
 
+    def instructions(self):
+        print ("\n\n")
+        print (Colors.WARNING + '''
+        Instructions''' + Colors.ENDC + '''
+        ================
+        This tool checks for Deauthentication Attacks on .pcap files. It assumes that the folder(s) exist in the /data directory.
+        e.g. /data/file1.pcap, /data/file2.pcap etc.
+        The user has to type just the name of the file (file1.pcap, file2.pcap etc) and make sure they exist in /data directory.
+        ''')
+
+
 if __name__== "__main__":
+    display_banner()
     Menu().run()
