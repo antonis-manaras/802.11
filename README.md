@@ -17,4 +17,6 @@ pip install pyshark
 requires Wireshark and tshark (wireshark for terminal) to be installed in the system
 
 ### Notes
-As of now it only reads files from /data
+- As of now it only reads files from /data
+- This tool checks for Deauthentication Attacks on **.pcap** files. It assumes that the folder(s) exist in the ***/data*** directory.e.g. */data/**file1.pcap***, */data/**file2.pcap*** etc. 
+The user has to type just the name of the file (***file1.pcap***, ***file2.pcap*** etc) and make sure they exist in ***/data*** directory.
