@@ -46,8 +46,10 @@ class Menu(Scraper):
                 print (Colors.FAIL + "Dude.... that is not an option...." + Colors.ENDC)
 
     def scraper(self):
-        pcap = raw_input("Enter the name of the .pcap to audit (I assume it is in data dir): ")
-        Scraper(pcap).scraper()
+        pcap1 = raw_input("Enter the name of the first .pcap to audit (I assume it is in data dir): ")
+        pcap2 = raw_input("Enter the name of the second .pcap to audit (I assume it is in data dir): ")
+        Scraper(pcap1).scraper()
+        Scraper(pcap2).scraper()
 
     def quit(self):
         print ("\n\n")
