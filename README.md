@@ -1,7 +1,6 @@
 # 802.11
 802.11 Pentesting repo
 
-
 ## DAD - Deauthentication Attack Detection v.1.0.1-alpha
 
 A tool to detect deauthentication attacks
@@ -30,3 +29,5 @@ $ pip install pyshark
 - As of now it only reads files from /data
 - This tool checks for Deauthentication Attacks on **.pcap** files. It assumes that the folder(s) exist in the ***/data*** directory.e.g. */data/**file1.pcap***, */data/**file2.pcap*** etc.
 The user has to type just the name of the file (***file1.pcap***, ***file2.pcap*** etc) and make sure they exist in ***/data*** directory.
+
+This tool is a deliverable for the course of Wireless and Mobile Network Security, as part of Information and Communication Systems Security MSc Programm, of the University of the Aegean, Greece.
